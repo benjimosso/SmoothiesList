@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smoothies Menu</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Montserrat", Arial, sans-serif;
+        background: #f7fafc;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 700px;
+        margin: 40px auto;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        padding: 32px 24px;
+      }
+      h1 {
+        text-align: center;
+        color: #2d3748;
+        margin-bottom: 32px;
+        font-size: 2.5em;
+      }
+      .smoothie {
+        border-bottom: 1px solid #e2e8f0;
+        padding: 20px 0;
+      }
+      .smoothie:last-child {
+        border-bottom: none;
+      }
+      .smoothie-name {
+        font-size: 1.3em;
+        font-weight: 700;
+        color: #3182ce;
+        margin-bottom: 8px;
+      }
+      .smoothie-desc {
+        color: #4a5568;
+        font-size: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Smoothies Ideas</h1>
+      <div id="smoothies-list"></div>
+    </div>
+    <script>
+      
+      data = {
+        category: "Smoothies",
+        items: [
+          {
+            name: "Tropical",
+            description:
+              "Mango, banana, raw almonds, coconut, dates & coconut milk. All organic.",
+            extras: [
+              "When you get this to go, it comes in a sustainable & refundable glass jar!",
+            ],
+          },
+          {
+            name: "Lemon & Ginger Probiotic",
+            description:
+              "Fresh lemon, ginger, honey, banana, coconut milk with plain yogurt. All organic.",
+            extras: [
+              "House made organic vegan cashew yogurt can be substituted!",
+              "When you get this to go, it comes in a sustainable & refundable glass jar",
+            ],
+          },
+          {
+            name: "Berry Green",
+            description:
+              "Dandelion, kale, parsley, zucchini, fennel, banana, mixed berries, honey, coconut milk. All organic",
+            extras: [
+              "When you get this to go, it comes in a sustainable & refundable glass jar!",
+            ],
+          },
+          {
+            name: "Anandamide, Cacao & Coconut",
+            description:
+              "Sun Potion Anandamide* Raw cacao, dates, banana, coconut, avocado, coconut milk. All organic. *means BLISS in Sanskrit: reishi, tocos, maca, suma, astragalus, mucuna pruriens, ashwaganda,turmeric, cayenne & rose petals",
+            extras: [
+              "When you get this to go, it comes in a sustainable & refundable glass jar!",
+            ],
+          },
+          {
+            name: "Strawberry Nut",
+            description:
+              "Strawberries, banana, almonds, hemp seed, dates & house-made cashew milk. All organic",
+            extras: [
+              "When you get this to go, it comes in a sustainable & refundable glass jar!",
+            ],
+          },
+          {
+            name: "Almond Butter",
+            description:
+              "Almond butter, banana, coconut,raw almonds, dates & almond milk. All organic",
+            extras: [
+              "When you get this to go, it comes in a sustainable & refundable glass jar!",
+            ],
+          },
+          {
+            name: "Espresso & Protein",
+            description:
+              "Two shots of espresso blended with frozen banana, goat milk protein with true colostrum, lacuma powder, cardamom, dates and a bit of whole milk. All organic",
+            extras: [
+              "When you get this to go, it comes in a sustainable & refundable glass jar!",
+            ],
+          },
+          {
+            name: "Acai Ginger",
+            description:
+              "Blended with banana, berries, honey, house cashew milk, generous amounts of ginger and Reishi! All organic.",
+            extras: [
+              "When you get this to go, it comes in a sustainable & refundable glass jar!",
+            ],
+          },
+          {
+            name: "Vanilla",
+            description:
+              "Blended with avocado, plain yogurt, honey, banana, house cashew milk and Pine Pollen! (Increases vigor and drive). All organic",
+            extras: [
+              "House made organic vegan cashew yogurt can be substituted!",
+              "When you get this to go, it comes in a sustainable & refundable glass jar",
+            ],
+          },
+          {
+            name: "Mango Lassi",
+            description:
+              "Blended with mango, plain yogurt dates, house cashew milk, banana and cardamom. All organic",
+            extras: [
+              "House made organic vegan cashew yogurt can be substituted!",
+              "When you get this to go, it comes in a sustainable & refundable glass jar",
+            ],
+          },
+          {
+            name: "Peanut Butter Cup",
+            description:
+              "Blended with fair trade cacao, avocado, house cashew milk, peanut butter, banana, honey and cacao nibs. All organic",
+            extras: [
+              "When you get this to go, it comes in a sustainable & refundable glass jar!",
+            ],
+          },
+        ],
+      };
+      const list = document.getElementById("smoothies-list");
+      data.items.forEach((item) => {
+        const div = document.createElement("div");
+        div.className = "smoothie";
+        div.innerHTML = `
+			<div class="smoothie-name">${item.name}</div>
+			<div class="smoothie-desc">${item.description}</div>
+		  `;
+        list.appendChild(div);
+      });
+    </script>
+  </body>
+</html>
